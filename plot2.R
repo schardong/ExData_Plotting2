@@ -17,6 +17,7 @@ balt <- filter(pm25, fips=='24510') %>%
   group_by(year) %>%
   summarise(Emissions=sum(Emissions))
 
+png('plot2.png')
 plot(Emissions ~ year,
      data=balt,
      type='l',
@@ -27,3 +28,4 @@ with(data=balt,
      points(x=year,
             y=Emissions,
             pch=19))
+dev.off()
