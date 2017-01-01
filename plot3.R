@@ -26,7 +26,7 @@ balt <- filter(pm25, fips == '24510') %>%
 
 ## Plotting the data.
 g <- ggplot(data=balt, aes(x=year, y=Emissions, color=type)) +
-      ggtitle('Emissions of PM2.5 by year/type in the city of Baltimore [1998, 2008]') +
+      ggtitle('Emissions of PM2.5 by year/type in the city of Baltimore [1999, 2008]') +
       xlab('Year') +
       ylab('PM2.5 (tons)')
 

@@ -25,7 +25,7 @@ png('plot1.png')
 plot(Emissions ~ year,
      data=by.year,
      type='l',
-     main='Emissions of PM2.5 by year across the US [1998, 2008]',
+     main='Emissions of PM2.5 by year across the US [1999, 2008]',
      xlab='Year',
      ylab='PM2.5 (tons)')
 with(data=by.year,

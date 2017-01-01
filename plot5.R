@@ -31,7 +31,7 @@ balt.vehicles <- select(pm25, SCC, Emissions, year, fips) %>%
   summarise(Emissions=sum(Emissions))
 
 g <- ggplot(data=balt.vehicles, aes(x=year, y=Emissions)) +
-  ggtitle('Emissions of PM2.5 by Vehicle-related sources in Baltimore [1998, 2008]') +
+  ggtitle('Emissions of PM2.5 by Vehicle-related sources in Baltimore [1999, 2008]') +
   xlab('Year') +
   ylab('PM2.5 (tons)')
 

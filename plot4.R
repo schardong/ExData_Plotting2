@@ -30,7 +30,7 @@ coal <- select(pm25, SCC, year, Emissions) %>%
   summarise(Emissions=sum(Emissions))
 
 g <- ggplot(data=coal, aes(x=year, y=Emissions)) +
-    ggtitle('Emissions of PM2.5 by Coal combustion-related sources\nacross the US [1998, 2008]') +
+    ggtitle('Emissions of PM2.5 by Coal combustion-related sources\nacross the US [1999, 2008]') +
     xlab('Year') +
     ylab('PM2.5 (tons)')
 

@@ -45,7 +45,7 @@ la.vehicles <- select(pm25, SCC, Emissions, year, fips) %>%
 loc <- factor(x=c(rep(0, times=4), rep(1, times=4)), labels=c('BALT', 'LA'))
 vehicles <- cbind(rbind(balt.vehicles, la.vehicles), 'location'=loc)
 
-g <- ggplot(data=vehicles, aes(x=year, y=Emissions, color=location)) + ggtitle('Emissions of PM2.5 by Vehicle-related sources in Baltimore and\nLos Angeles [1998, 2008]') + xlab('Year') + ylab('PM2.5 (tons)')
+g <- ggplot(data=vehicles, aes(x=year, y=Emissions, color=location)) + ggtitle('Emissions of PM2.5 by Vehicle-related sources in Baltimore and\nLos Angeles [1999, 2008]') + xlab('Year') + ylab('PM2.5 (tons)')
 
 png('plot6.png')
 print(g + geom_line() + geom_point())
