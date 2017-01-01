@@ -24,7 +24,7 @@ png('plot2.png')
 plot(Emissions ~ year,
      data=balt,
      type='l',
-     main='Emissions of PM2.5 by year in the city of Baltimore',
+     main='Emissions of PM2.5 by year in the city of Baltimore [1998, 2008]',
      xlab='Year',
      ylab='PM2.5 (tons)')
 with(data=balt,
