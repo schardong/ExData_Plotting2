@@ -14,6 +14,11 @@ if (!file.exists('Source_Classification_Code.rds') | !file.exists('summarySCC_PM
 ## Reading the dataset and grouping it by year and type.
 pm25 <- readRDS(file='summarySCC_PM25.rds')
 
+## Of the four types of sources indicated by the type (point, nonpoint, onroad,
+## nonroad) variable, which of these four sources have seen decreases in
+## emissions from 1999–2008 for Baltimore City? Which have seen increases in
+## emissions from 1999–2008?
+
 balt <- filter(pm25, fips=='24510') %>%
   group_by(year, type) %>%
   summarise(Emissions=sum(Emissions)) %>%

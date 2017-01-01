@@ -13,6 +13,9 @@ if (!file.exists('Source_Classification_Code.rds') | !file.exists('summarySCC_PM
 ## Reading the dataset and grouping it by year.
 pm25 <- readRDS(file='summarySCC_PM25.rds')
 
+## Have total emissions from PM2.5 decreased in the Baltimore City, Maryland
+## (fips == "24510") from 1999 to 2008?
+
 balt <- filter(pm25, fips=='24510') %>%
   group_by(year) %>%
   summarise(Emissions=sum(Emissions))

@@ -13,6 +13,10 @@ if (!file.exists('Source_Classification_Code.rds') | !file.exists('summarySCC_PM
 ## Reading the dataset and grouping it by year.
 pm25 <- readRDS(file='summarySCC_PM25.rds')
 
+## Have total emissions from PM2.5 decreased in the United States from 1999 to
+## 2008? Using the base plotting system, make a plot showing the total PM2.5
+## emission from all sources for each of the years 1999, 2002, 2005, and 2008.
+
 by.year <- group_by(pm25, year) %>%
   summarise(Emissions=sum(Emissions))
 
