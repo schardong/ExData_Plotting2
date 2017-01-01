@@ -20,17 +20,17 @@ source.codes <- readRDS(file='Source_Classification_Code.rds')
 
 coal.levels <- levels(source.codes$EI.Sector)
 coal.rows <- grep(pattern='Coal', x=coal.levels)
-coal.fact <- select(source.codes, SCC, EI.Sector) %>% filter(EI.Sector %in% coal.levels[coal.rows])
-coal.SCC <- as.numeric(as.character(coal.fact$SCC))
+coal.fact <- select(source.codes, SCC, EI.Sector) %>%
+  filter(EI.Sector %in% coal.levels[coal.rows])
+coal.SCC <- as.character(coal.fact$SCC)
 
 coal <- select(pm25, SCC, year, Emissions) %>%
-  mutate(SCC=as.numeric(SCC)) %>%
   filter(SCC %in% coal.SCC) %>%
   group_by(year) %>%
   summarise(Emissions=sum(Emissions))
 
 g <- ggplot(data=coal, aes(x=year, y=Emissions)) +
-    ggtitle('Emissions of PM2.5 by year for Coal combustion-related sources\nacross the US') +
+    ggtitle('Emissions of PM2.5 by Coal combustion-related sources\nacross the US') +
     xlab('Year') +
     ylab('PM2.5 (tons)')
 

@@ -19,7 +19,7 @@ pm25 <- readRDS(file='summarySCC_PM25.rds')
 ## emissions from 1999–2008 for Baltimore City? Which have seen increases in
 ## emissions from 1999–2008?
 
-balt <- filter(pm25, fips=='24510') %>%
+balt <- filter(pm25, fips == '24510') %>%
   group_by(year, type) %>%
   summarise(Emissions=sum(Emissions)) %>%
   mutate(type=as.factor(type))
